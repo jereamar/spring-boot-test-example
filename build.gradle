@@ -60,6 +60,11 @@ ext {
     set('testcontainersVersion', "1.15.3")
 }
 
+
+// Security fix: force postgresql to 42.2.28.jre7
+configurations.all {
+    resolutionStrategy.force 'postgresql:42.2.28.jre7'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
