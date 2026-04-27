@@ -60,6 +60,11 @@ ext {
     set('testcontainersVersion', "1.15.3")
 }
 
+
+// Security fix: force jackson-core to 2.21.2
+configurations.all {
+    resolutionStrategy.force 'jackson-core:2.21.2'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
